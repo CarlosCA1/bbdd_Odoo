@@ -95,7 +95,26 @@ Comprobación:
 
 ![Imagen](images/a9.png)
 
+6. Apartado 6:
 
+````
+SELECT 
+    rp.name AS nombre_empresa,
+    COUNT(am.id) AS numero_facturas,
+    SUM(am.amount_untaxed) AS total_sin_impuestos
+FROM account_move am
+JOIN res_partner rp ON am.partner_id = rp.id
+WHERE am.move_type = 'out_invoice'   
+  AND am.state = 'posted'            
+GROUP BY rp.name
+HAVING COUNT(am.id) > 2 
+````
+
+Esta consulta genera un listado de empresas clientes que han recibido más de dos facturas de venta confirmadas, mostrando su nombre, el número de facturas y el total facturado sin impuestos. Para ello, se toma la tabla account_move (alias am) que contiene las facturas y se une (JOIN) con res_partner (alias rp) mediante am.partner_id = rp.id para obtener la información de la empresa cliente. La condición am.move_type = 'out_invoice' filtra solo las facturas de venta, mientras que am.state = 'posted' asegura que solo se incluyan facturas confirmadas. Con GROUP BY rp.name se agrupan las facturas por empresa, COUNT(am.id) > 2 selecciona solo las empresas con más de dos facturas, y SUM(am.amount_untaxed) calcula el total facturado sin impuestos.
+
+Comprobación:
+
+![Imagen](images/a9.png)
 
 
 
