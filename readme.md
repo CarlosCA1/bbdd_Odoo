@@ -75,7 +75,25 @@ Comprobación:
 
 ![Imagen](images/a9.png)
 
+5. Apartado 5:
 
+````
+SELECT
+rp.name AS nombre_empresa,
+am.name AS numero_factura,
+am.invoice_date AS fecha_factura,
+am.amount_untaxed AS total_sin_impuestos
+FROM account_move am
+JOIN res_partner rp ON am.partner_id = rp.id
+WHERE am.move_type = 'in_refund'
+ORDER BY am.invoice_date DESC;
+````
+
+Esta consulta obtiene un listado de empresas proveedoras que han emitido facturas rectificativas o reembolsos en Odoo, mostrando el nombre de la empresa (rp.name), el número de la factura (am.name), la fecha de la factura (am.invoice_date) y el total de la factura sin impuestos (am.amount_untaxed). La información se toma de la tabla account_move con alias am para las facturas y se une (JOIN) con res_partner con alias rp para obtener los datos de la empresa a través de am.partner_id = rp.id. La condición am.move_type = 'in_refund' filtra solo las facturas de proveedor que son reembolsos, y ORDER BY am.invoice_date DESC ordena los resultados de manera que las facturas más recientes aparezcan primero.
+
+Comprobación:
+
+![Imagen](images/a9.png)
 
 
 
