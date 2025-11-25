@@ -37,4 +37,24 @@ Comprobación:
 ![Imagen](images/a9.png)
 
 
+3. Apartado 3:
+
+Sentencia: 
+
+````
+SELECT * 
+FROM EmpresasFCT
+ORDER BY fechaContacto DESC;
+````
+
+Comprobación:
+
+![Imagen](images/a9.png)
+
+
+
+
+
+
+
 
