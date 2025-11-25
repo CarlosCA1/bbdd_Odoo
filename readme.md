@@ -117,7 +117,16 @@ Comprobación:
 ![Imagen](images/a9.png)
 
 
+7. Apartado 7:
 
+````
+UPDATE res_partner
+SET email = REPLACE(email, '@bilbao.example.com', '@bilbao.bizkaia.neus')
+WHERE email LIKE '%@bilbao.example.com';
+````
 
+Comprobación:
+
+![Imagen](images/a9.png)
 
 
