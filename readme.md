@@ -51,6 +51,32 @@ Comprobación:
 
 ![Imagen](images/a9.png)
 
+4. Apartado 4:
+
+Sentencia:
+
+````
+SELECT 
+    rp.name AS nombre_contacto,
+    rp.city AS ciudad,
+    rc.name AS nombre_comercial_empresa
+FROM res_partner rp
+INNER JOIN res_partner rc ON rp.parent_id = rc.id
+WHERE 
+    rp.is_company = FALSE
+    AND rp.city <> 'Tracy'
+ORDER BY 
+    rc.name ASC;
+````
+
+Esta consulta selecciona tres columnas: rp.name que es el nombre del contacto, rp.city que es la ciudad del contacto, y rc.name que es el nombre de la empresa asociada, renombrada como nombre_comercial_empresa. La tabla base es res_partner, a la que se le asigna el alias rp para referirse a los contactos de manera más corta; se hace un INNER JOIN con la misma tabla usando el alias rc para obtener la empresa asociada mediante rp.parent_id = rc.id, asegurando que solo se incluyan contactos que tengan empresa. La condición rp.is_company = FALSE filtra los registros para que sean personas y no empresas, mientras que rp.city <> 'Tracy' excluye los contactos cuya ciudad sea Tracy. Por último, ORDER BY rc.name ASC ordena los resultados alfabéticamente según el nombre de la empresa.
+
+Comprobación:
+
+![Imagen](images/a9.png)
+
+
+
 
 
 
