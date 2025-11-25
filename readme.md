@@ -16,7 +16,7 @@ CREATE TABLE EmpresasFCT (
 
 Comprobación:
 
-![Imagen](images/a9.png)
+![Imagen](images/a1.png)
 
 
 2. Insertar registros.
@@ -34,7 +34,7 @@ INSERT INTO EmpresasFCT (nombre, quiereAlumnos, numAlumnos, fechaContacto) VALUE
 
 Comprobación:
 
-![Imagen](images/a9.png)
+![Imagen](images/a2.png)
 
 
 3. Apartado 3:
@@ -49,7 +49,7 @@ ORDER BY fechaContacto DESC;
 
 Comprobación:
 
-![Imagen](images/a9.png)
+![Imagen](images/a3.png)
 
 4. Apartado 4:
 
@@ -73,7 +73,7 @@ Esta consulta selecciona tres columnas: rp.name que es el nombre del contacto, r
 
 Comprobación:
 
-![Imagen](images/a9.png)
+![Imagen](images/a4.png)
 
 5. Apartado 5:
 
@@ -93,7 +93,7 @@ Esta consulta obtiene un listado de empresas proveedoras que han emitido factura
 
 Comprobación:
 
-![Imagen](images/a9.png)
+![Imagen](images/a5.png)
 
 6. Apartado 6:
 
@@ -114,7 +114,7 @@ Esta consulta genera un listado de empresas clientes que han recibido más de do
 
 Comprobación:
 
-![Imagen](images/a9.png)
+![Imagen](images/a6.png)
 
 
 7. Apartado 7:
@@ -127,6 +127,6 @@ WHERE email LIKE '%@bilbao.example.com';
 
 Comprobación:
 
-![Imagen](images/a9.png)
+![Imagen](images/a7.png)
 
 
